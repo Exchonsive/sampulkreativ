@@ -202,7 +202,6 @@
         
         <div class="container">
             <div class="chat-box">
-                <!-- Header Chat -->
                 <div class="chat-header">
                     <i class="fas fa-comments"></i> SampulAssistant
                 </div>
