@@ -1,0 +1,319 @@
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+.navbar {
+    background: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand .logo {
+    max-width: 100px;
+}
+
+.navbar-nav .nav-link {
+    color: rgb(185, 185, 185);
+    font-weight: 400;
+    padding: 10px 15px;
+    transition: color 0.3s ease-in-out;
+    font-size: 14px;
+}
+
+.navbar-nav .nav-link:hover{
+    color: #dfa809;
+}
+.navbar-nav .nav-link.active {
+    color: #20c997;
+}
+
+.navbar-logo {
+    max-width: 140px;
+    height: auto;
+}
+
+
+.big-icon {
+    font-size: 50px;
+    color: #20c997;
+}
+
+#home {
+    padding: 100px 0;
+    background: white;
+}
+#home-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+}
+#home-desc {
+    font-size: 1rem;
+    color: #666;
+    margin: 15px 0;
+}
+.btn-primary {
+    background: #20c997;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 50px;
+    transition: 0.3s;
+}
+.btn-primary:hover {
+    background: #dfa809;
+}
+#home-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.services {
+    background-color: #f8f9fa;
+}
+
+.service-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    min-height: 220px;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-icon {
+    font-size: 40px;
+    color: #20c997;
+    margin-bottom: 15px;
+}
+
+.fw-bold{
+    color: #ffffff;
+}
+
+.portfolio-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.portfolio-section h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.portfolio-section p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Filter Buttons */
+.portfolio-filter {
+    margin-bottom: 30px;
+}
+
+.filter-btn {
+    background-color: transparent;
+    border: 2px solid #17a97b;
+    color: #17a97b;
+    padding: 8px 16px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.filter-btn:hover{
+    background-color: #dfa809;
+    color: #ffffff;
+}
+.filter-btn.active {
+    background-color: #17a97b;
+    color: white;
+}
+
+.portfolio-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.portfolio-item {
+    width: 30%;
+    border-radius: 8px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05);
+}
+
+.contact-section {
+    padding: 60px 0;
+}
+
+.contact-section h2 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.contact-section p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.contact-item i {
+    font-size: 24px;
+    color: #17a97b;
+}
+
+.contact-item h4 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.contact-item p {
+    font-size: 14px;
+    color: #555;
+    margin: 0;
+}
+
+.contact-item a {
+    text-decoration: none;
+    color: #17a97b;
+}
+
+.contact-item a:hover {
+    text-decoration: none;
+    color: #dfa809;
+    text-decoration: underline;
+}
+
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 10%;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+}
+
+.chat-section {
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.chat-box {
+    width: 100%;
+    max-width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.chat-header {
+    color: #17a97b;
+    padding: 15px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 18px;
+}
+
+.chat-header i {
+    margin-right: 8px;
+}
+
+.chat-body {
+    padding: 15px;
+    height: 400px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-message {
+    max-width: 80%;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.chat-message i {
+    margin-right: 5px;
+}
+
+.received {
+    background: #f1f1f1;
+    align-self: flex-start;
+}
+
+.sent {
+    background: #17a97b;
+    color: white;
+    align-self: flex-end;
+}
+
+.chat-footer {
+    display: flex;
+    padding: 10px;
+    background: #f9f9f9;
+    border-top: 1px solid #ddd;
+}
+
+#chat-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#send-btn,
+#contact-agent-btn {
+    margin-left: 5px;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#send-btn {
+    background: #17a97b;
+    color: white;
+}
+
+#contact-agent-btn {
+    background: #dfa809;
+    color: white;
+}
+
