@@ -20,6 +20,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = json_decode($response, true);
     
     // Kirim kembali respons ke JavaScript
-    echo $result['response'];
+    if ($result) {
+        echo $result['response'];    
+    }else{
+        echo "Mohon maaf bot sedang tidak aktif, silahkan klik kontak agent untuk bertanya langsung ke agen kami. Terima kasih!";
+    }
+    
 }
 ?>
