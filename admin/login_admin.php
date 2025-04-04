@@ -25,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (password_verify($password, $user['password'])) {
             // Simpan session login
             $_SESSION['username'] = $user['username'];
+            $_SESSION['user_id'] = $user['user_id'];
             $_SESSION['role'] = $user['role'];
 
             // Redirect berdasarkan role
@@ -35,10 +36,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             exit();
         } else {
-            $error = "Password salah!";
+            $error = "Username atau password salah";
         }
     } else {
-        $error = "Username tidak ditemukan!";
+        $error = "Username atau password salah";
     }
 }
 ?>
@@ -61,11 +62,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <form method="POST">
             <div class="mb-3">
                 <label class="form-label">Username</label>
-                <input type="text" name="username" class="form-control" required>
+                <input type="text" name="username" autocomplete="off" class="form-control" required>
             </div>
             <div class="mb-3">
                 <label class="form-label">Password</label>
-                <input type="password" name="password" class="form-control" required>
+                <input type="password" name="password" autocomplete="off" class="form-control" required>
             </div>
             <button type="submit" class="btn btn-dark w-100">Login</button>
         </form>
