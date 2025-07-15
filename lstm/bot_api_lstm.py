@@ -1,55 +1,61 @@
+from flask import Flask, request, jsonify
+import tensorflow as tf
+import pickle
 import json
 import numpy as np
-import tensorflow as tf
-from flask import Flask, request, jsonify
-from tensorflow.keras.preprocessing.text import tokenizer_from_json
-from tensorflow.keras.preprocessing.sequence import pad_sequences
-import nltk
+import string
+from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
+from nltk.tokenize import word_tokenize
 
-# Inisialisasi Flask app
+
 app = Flask(__name__)
+model = tf.keras.models.load_model("chatbot_model.h5")
+with open("tokenizer.pkl", "rb") as f:
+    tokenizer = pickle.load(f)
+with open("label_encoder.pkl", "rb") as f:
+    le = pickle.load(f)
+with open("intents-real.json", encoding='utf-8') as file:
+    data = json.load(file)
+with open("combined_slang_words.txt", encoding='utf-8') as f:
+    slang_dict = json.load(f)
 
-# Load model yang telah dilatih
-model = tf.keras.models.load_model("chatbot_lstm_model.h5")
+stemmer = StemmerFactory().create_stemmer()
 
-# Load tokenizer
-with open("tokenizer.json", "r", encoding="utf-8") as tokenizer_file:
-    tokenizer_data = json.load(tokenizer_file)
-    tokenizer = tokenizer_from_json(tokenizer_data)
+max_len = model.input_shape[1]
 
-# Load label_map
-with open("label_map.json", "r", encoding="utf-8") as label_map_file:
-    label_map = json.load(label_map_file)
+def normalize_slang(tokens):
+    return [slang_dict.get(w, w) for w in tokens]
 
-# Load responses
-with open("responses.json", "r", encoding="utf-8") as responses_file:
-    responses = json.load(responses_file)
+def preprocess_input(text):
+    text = text.lower().translate(str.maketrans('', '', string.punctuation))
+    tokens = word_tokenize(text)
+    normalized = normalize_slang(tokens)
+    final_text = ' '.join(normalized)
+    seq = tokenizer.texts_to_sequences([final_text])
+    padded = tf.keras.preprocessing.sequence.pad_sequences(seq, maxlen=max_len, padding='post')
+    return padded
 
-# Konversi label_map menjadi dict terbalik
-label_map_inv = {v: k for k, v in label_map.items()}
+def get_response(predicted_tag):
+    for intent in data['intents']:
+        if intent['tag'] == predicted_tag:
+            return np.random.choice(intent['responses'])
+    return "Maaf kak, aku belum ngerti maksudnya 😅"
 
-# Fungsi untuk memproses input teks
-def predict_intent(text):
-    tokens = nltk.word_tokenize(text.lower())
-    seq = tokenizer.texts_to_sequences([" ".join(tokens)])
-    padded_seq = pad_sequences(seq, maxlen=model.input_shape[1], padding='post')
-    prediction = model.predict(padded_seq)
-    predicted_label = np.argmax(prediction)
-    tag = label_map_inv[predicted_label]
-    return np.random.choice(responses[str(predicted_label)])
-
-# Endpoint untuk chatbot
-@app.route("/chatbot", methods=["POST"])
+@app.route("/chat", methods=["POST"])
 def chat():
-    data = request.get_json()
-    if "message" not in data:
-        return jsonify({"error": "No message provided"}), 400
-    
-    user_message = data["message"]
-    bot_response = predict_intent(user_message)
-    
-    return jsonify({"response": bot_response})
+    user_input = request.json.get("message")
+    if not user_input:
+        return jsonify({"error": "Pesan kosong"}), 400
 
-# Menjalankan Flask app
+    input_seq = preprocess_input(user_input)
+    prediction = model.predict(input_seq)[0]
+    tag = le.inverse_transform([np.argmax(prediction)])[0]
+    response = get_response(tag)
+
+    return jsonify({
+        "tag": tag,
+        "response": response
+    })
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host="0.0.0.0", port=5000)

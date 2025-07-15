@@ -1,7 +1,7 @@
 <?php
 $page = isset($_GET['page']) ? $_GET['page'] : 'halaman_utama';
 
-$allowed_pages = ['halaman_utama', 'report', 'chat_agent','login','logout'];
+$allowed_pages = ['halaman_utama', 'halaman_download', 'chat_agent','login','logout'];
 
 if (in_array($page, $allowed_pages)) {
     include "pages_admin/$page.php";

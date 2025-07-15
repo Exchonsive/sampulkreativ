@@ -317,3 +317,12 @@ body{
     color: white;
 }
 
+
+.accordion-button {
+    font-weight: bold;
+    background-color: #f8f9fa;
+}
+.accordion-body {
+    background-color: #ffffff;
+    border-top: 1px solid #dee2e6;
+}

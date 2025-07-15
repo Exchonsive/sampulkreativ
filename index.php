@@ -1,3 +1,6 @@
+<?php
+require 'admin/koneksi.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,8 +15,6 @@
     <meta property="og:site_name" content=" Sampulkreativ Technology"/> 
     <meta property="og:description" content="Sampulkreativ is a consulting services company..."/> 
     <meta property="og:url" content="http://sampulkreativ.com" />
-
-
     <link rel="shortcut icon" type="image/png" href="img/favicon.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -25,6 +26,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
     <link rel="icon" href="img/sampulkreativ-logo.png" type="image/x-icon">
     <script src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
@@ -43,10 +45,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#home">HOME</a>
+                        <a class="nav-link active" href="#home">BERANDA</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#services">SERVICES</a>
+                        <a class="nav-link" href="#services">LAYANAN</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#portofolio">PORTOFOLIO</a>
@@ -55,7 +57,10 @@
                         <a class="nav-link" href="#chat">CHAT</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">CONTACT</a>
+                        <a class="nav-link" href="#contact">KONTAK</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin/login_admin.php">LOGIN</a>
                     </li>
                 </ul>
             </div>
@@ -66,11 +71,11 @@
         <div class="container" data-aos-duration="1000" data-aos="fade-up">
             <div class="row align-items-center">
                 <div class="col-lg-4 text-center text-lg-start pt-4 pt-lg-0">
-                    <h1 class="home-title">We Have All For <br> Creative Future</h1>
+                    <h1 class="home-title">Kami Siap untuk <br> Masa Depan Kreatif</h1>
                     <p class="home-desc">
-                        Sampulkreativ Technology provides qualified software development for the digital transformation of large companies. Get ready for your awesome project.
+                        Sampulkreativ Technology menyediakan layanan pengembangan perangkat lunak yang berkualitas untuk transformasi digital perusahaan Anda. Mari mulai proyek impianmu!
                     </p>
-                    <a href="#" class="btn btn-primary">GET STARTED</a>
+                    <a href="#chat" class="btn btn-primary">MULAI TANYA</a>
                 </div>
                 
                 <div class="col-lg-8 text-center text-lg-end">
@@ -86,50 +91,50 @@
     </svg>
     <section id="services" style="background-color: #20c997; margin-top:-5%"><br><br><br>
         <div class="container text-center">
-            <p class="fw-bold">Featured Service</p>
-            <h2 class="fw-bold">The Service That We Are Providing</h2>
+            <p class="fw-bold">Layanan Unggulan</p>
+            <h2 class="fw-bold">Layanan yang Kami Tawarkan</h2>
             <br>
             <div class="row mt-4">
                 <div class="col-md-4 col-sm-6 mb-4">
                     <div class="service-card">
                         <i class="fas fa-code service-icon"></i>
-                        <h4>Web Application</h4>
-                        <p>Build a website with an attractive design and good system, using PHP or Ruby on Rails.</p>
+                        <h4>Aplikasi Web</h4>
+                        <p>Membangun website dengan desain menarik dan sistem handal menggunakan PHP atau Ruby on Rails.</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 mb-4">
                     <div class="service-card">
                         <i class="fas fa-mobile-alt service-icon"></i>
-                        <h4>Android Application</h4>
-                        <p>Build application for Android with good system and secure API authentication.</p>
+                        <h4>Aplikasi Android</h4>
+                        <p>Membangun aplikasi Android dengan sistem yang baik dan autentikasi API yang aman.</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 mb-4">
                     <div class="service-card">
                         <i class="fab fa-apple service-icon"></i>
-                        <h4>iOS Application</h4>
-                        <p>Build application for iOS using powerful Swift code.</p>
+                        <h4>Aplikasi iOS</h4>
+                        <p>Membangun aplikasi iOS menggunakan bahasa pemrograman Swift yang powerfull.</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 mb-4">
                     <div class="service-card">
                         <i class="fas fa-comments service-icon"></i>
-                        <h4>IT Consultant</h4>
-                        <p>We are eager to hear your story, help you find the best solutions.</p>
+                        <h4>Konsultan IT</h4>
+                        <p>Kami siap mendengarkan kebutuhan Anda dan memberikan solusi terbaik.</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 mb-4">
                     <div class="service-card">
                         <i class="fas fa-camera service-icon"></i>
                         <h4>Multimedia</h4>
-                        <p>Capture your precious moments and enhance them with creative editing.</p>
+                        <p>Mengabadikan momen berharga dan menyulapnya menjadi karya yang kreatif.</p>
                     </div>
                 </div>
                 <div class="col-md-4 col-sm-6 mb-4">
                     <div class="service-card">
                         <i class="fas fa-paint-brush service-icon"></i>
-                        <h4>Graphic Designer</h4>
-                        <p>Graphic design can convey what you feel and enhance your brand identity.</p>
+                        <h4>Desain Grafis</h4>
+                        <p>Desain grafis untuk menyampaikan pesan dan memperkuat identitas merek Anda.</p>
                     </div>
                 </div>
             </div>
@@ -149,10 +154,10 @@
     
             <!-- Filter Buttons -->
             <div class="portfolio-filter">
-                <button class="filter-btn active" data-filter="all">ALL</button>
+                <button class="filter-btn active" data-filter="all">SEMUA</button>
                 <button class="filter-btn" data-filter="web">WEB</button>
                 <button class="filter-btn" data-filter="mobile">MOBILE</button>
-                <button class="filter-btn" data-filter="design">DESIGN</button>
+                <button class="filter-btn" data-filter="design">DESAIN</button>
             </div>
     
             <!-- Portfolio Grid -->
@@ -215,10 +220,14 @@
     
                 <!-- Chat Footer -->
                 <div class="chat-footer">
+                    <button id="rate-btn" data-bs-toggle="modal" data-bs-target="#ratingModal" class="btn btn-info" style="margin-left: 5px;margin-right: 5px; color:white;">
+                        <i class="fas fa-star"></i> Beri Rating
+                    </button>
+
                     <input type="text" id="chat-input" placeholder="Ketik pesan...">
                     <button id="send-btn"><i class="fas fa-paper-plane"></i> Kirim</button>
                     <button id="contact-agent-btn" data-bs-toggle="modal" data-bs-target="#contactAgentModal">
-                        <i class="fas fa-headset"></i> Contact Agent
+                        <i class="fas fa-headset"></i> Kontak Agen
                     </button>
                 </div>
             </div>
@@ -228,8 +237,8 @@
     
     <section id="contact" data-aos-duration="1000" data-aos="fade-up" style="margin-top: 5%;">
         <div class="container">
-            <h2 class="text-center" style="color: #20c997">Contact</h2>
-            <p class="text-center">You can contact us in the following ways, so don't hesitate to contact us.</p>
+            <h2 class="text-center" style="color: #20c997">Kontak</h2>
+            <p class="text-center">Hubungi kami melalui cara-cara berikut. Jangan ragu untuk menghubungi yaa!</p>
     
             <div class="row">
                 <!-- Google Maps -->
@@ -270,7 +279,7 @@
                         <i class="fas fa-phone-alt"></i>
                         <div>
                             <a href="tel:+6285175052477" target="_blank">+62 851 7505 2477</a>
-                            <p>Monday - Friday at 09.00 - 17.00</p>
+                            <p>Senin - Jum'at pukul 09.00 - 17.00</p>
                         </div>
                     </div>
     
@@ -278,7 +287,7 @@
                         <i class="fas fa-envelope"></i>
                         <div>
                             <a href="mailto:sampulkreativ@gmail.com" target="_blank">sampulkreativ@gmail.com</a>
-                            <p>Send us your query anytime!</p>
+                            <p>Kirim pertanyaan kamu kapan saja!</p>
                         </div>
                     </div>
                 </div>
@@ -286,6 +295,32 @@
         </div>
     </section>
     </div>
+    <!-- MODAL RATING -->
+    <div class="modal fade" id="ratingModal" tabindex="-1" aria-labelledby="ratingModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Beri Penilaian</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Tutup"></button>
+            </div>
+            <div class="modal-body text-center">
+                <p>Bagaimana pendapat kakak tentang layanan chatbot ini?</p>
+                <div class="star-rating mb-3">
+                <i class="fas fa-star" data-value="1"></i>
+                <i class="fas fa-star" data-value="2"></i>
+                <i class="fas fa-star" data-value="3"></i>
+                <i class="fas fa-star" data-value="4"></i>
+                <i class="fas fa-star" data-value="5"></i>
+                </div>
+                <input type="text" id="rating-name" class="form-control" placeholder="Nama kakak (opsional)">
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="submit-rating" class="btn btn-success "><i class="fas fa-paper-plane"></i> Kirim</button>
+            </div>
+            </div>
+        </div>
+    </div>
+
     <!-- MODAL CONTACT AGENT -->
     <div class="modal fade" id="contactAgentModal" tabindex="-1" aria-labelledby="contactAgentModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -299,18 +334,48 @@
                     <div class="mb-3">
                         <select class="form-select" id="ticketOption">
                             <option value="" selected disabled>Pilih opsi</option>
+                            <option value="existing">FAQ</option>
                             <option value="new">Buat Pertanyaan Baru</option>
-                            <option value="existing">Saya punya Ticket Pertanyaan</option>
                         </select>
                     </div>
 
-                    <!-- Form Masukkan Ticket ID -->
-                    <form id="ticket-id-form" style="display: none;">
-                        <div class="mb-3">
-                            <label for="ticket-id" class="form-label"><i class="fas fa-key"></i> Masukkan Ticket ID</label>
-                            <input type="text" class="form-control" id="ticket-id" required>
-                        </div>
-                        <button type="submit" class="btn btn-primary w-100"><i class="fas fa-search"></i> Cari Tiket</button>
+                    <!-- Form FAQ-->
+                    <form id="faq-form" style="display: none;">
+                       <?php
+                        $query = "SELECT question, answer FROM faq_questions ORDER BY created_at DESC";
+                        $result = mysqli_query($conn, $query);
+
+                        if (mysqli_num_rows($result) > 0) {
+                            echo '<div class="accordion" id="faqAccordion">';
+                            $index = 0;
+
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                $index++;
+                                $question = htmlspecialchars($row['question']);
+                                $answer = htmlspecialchars($row['answer']);
+
+                                echo '
+                                <div class="accordion-item mb-2">
+                                    <h2 class="accordion-header" id="heading'.$index.'">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse'.$index.'" aria-expanded="false" aria-controls="collapse'.$index.'">
+                                            '.$question.'
+                                        </button>
+                                    </h2>
+                                    <div id="collapse'.$index.'" class="accordion-collapse collapse" aria-labelledby="heading'.$index.'" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body">
+                                            '.$answer.'
+                                        </div>
+                                    </div>
+                                </div>';
+                            }
+
+                            echo '</div>';
+                        } else {
+                            
+                        }
+                        ?>
+
+
                     </form>
 
                     <!-- Form Buat Ticket Baru -->
@@ -320,8 +385,8 @@
                             <input type="text" class="form-control" id="name" required>
                         </div>
                         <div class="mb-3">
-                            <label for="contact" class="form-label"><i class="fas fa-phone"></i> No. Telepon / Email</label>
-                            <input type="text" class="form-control" id="contact" required>
+                            <label for="contact-user" class="form-label"><i class="fas fa-address-book"></i> No. Telepon / Email</label>
+                            <input type="text" class="form-control" id="contact-user" required>
                         </div>
                         <div class="mb-3">
                             <label for="question" class="form-label"><i class="fas fa-comment"></i> Pertanyaan</label>
@@ -347,7 +412,140 @@
     crossorigin="anonymous"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-<!-- smooth scroll -->
+
+<script>
+$(document).ready(function () {
+    $('#send-btn').click(function () {
+        let message = $('#chat-input').val().trim();
+        if (message === '') return;
+
+        $.ajax({
+            url: 'simpan_chat.php',
+            type: 'POST',
+            data: { pesan: message },
+            success: function (res) {
+                console.log('Berhasil disimpan:', res);
+                $('#chat-input').val(''); // Kosongin input
+            },
+            error: function (xhr, status, error) {
+                console.error('Gagal:', error);
+            }
+        });
+    });
+});
+</script>
+
+
+<script>
+$(document).ready(function () {
+    $('#new-ticket-form').submit(function (e) {
+        e.preventDefault();
+
+        let nama = $('#name').val().trim();
+        let kontak = $('#contact-user').val().trim();
+        let pertanyaan = $('#question').val().trim();
+
+        $.ajax({
+            url: 'simpan_ticket.php',
+            type: 'POST',
+            data: {
+                nama: nama,
+                kontak: kontak,
+                pertanyaan: pertanyaan
+            },
+            success: function (res) {
+                $('#new-ticket-form')[0].reset();
+
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Pesan terkirim!',
+                    text: 'Tim kami akan segera menghubungi kakak'
+                });
+            },
+            error: function () {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Pesan gagal terkirim!',
+                    text: 'Kakak bisa coba lagi ya, mungkin ada masalah koneksi'
+                });
+            }
+        });
+
+       
+
+    });
+});
+</script>
+
+<script>
+$(document).ready(function () {
+    let selectedRating = 0;
+
+    // Hover effect & pilih bintang
+    $('.star-rating i').on('mouseenter', function () {
+        let value = $(this).data('value');
+        $('.star-rating i').each(function () {
+            $(this).toggleClass('text-warning', $(this).data('value') <= value);
+        });
+    }).on('mouseleave', function () {
+        $('.star-rating i').each(function () {
+            $(this).toggleClass('text-warning', $(this).data('value') <= selectedRating);
+        });
+    });
+
+    // Klik bintang
+    $('.star-rating i').on('click', function () {
+        selectedRating = $(this).data('value');
+        $('.star-rating i').each(function () {
+            $(this).toggleClass('text-warning', $(this).data('value') <= selectedRating);
+        });
+    });
+
+    // Submit rating
+    $('#submit-rating').click(function () {
+        let nama = $('#rating-name').val().trim();
+
+        if (selectedRating === 0) {
+            Swal.fire({
+                icon: 'warning',
+                title: 'Belum ada rating!',
+                text: 'Klik bintang dulu ya kak'
+            });
+            return;
+        }
+
+        $.ajax({
+            url: 'simpan_rating.php',
+            type: 'POST',
+            data: {
+                nama: nama,
+                rating: selectedRating
+            },
+            success: function () {
+                $('#rating-name').val('');
+                selectedRating = 0;
+                $('.star-rating i').removeClass('text-warning');
+                $('#ratingModal').modal('hide');
+
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Terima kasih kak!',
+                    text: 'Rating kamu sudah kami terima'
+                });
+            },
+            error: function () {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Gagal mengirim!',
+                    text: 'Coba lagi ya kak, mungkin ada masalah koneksi'
+                });
+            }
+        });
+    });
+});
+</script>
+
+
 <script>
     window.onscroll = function () {
 
@@ -410,55 +608,53 @@
 <script>
 $(document).ready(function () {
     function sendMessage() {
-        var userMessage = $("#chat-input").val().trim(); // Ambil input user
-        
+        var userMessage = $("#chat-input").val().trim();
+
         if (userMessage !== "") {
-            // Tampilkan pesan user di chatbox
             $("#chat-body").append(`<div class="chat-message sent"><p>${userMessage}</p></div>`);
-            
-            // Kirim ke PHP
+
             $.ajax({
-                url: "lstm/chat.php",  // File PHP yang akan menghubungkan ke Flask API
+                url: "lstm/chat.php", 
                 type: "POST",
-                data: { message: userMessage },  // Kirim pesan ke PHP
+                data: { message: userMessage },
                 success: function (response) {
-                    // Tampilkan respons chatbot
-                    $("#chat-body").append(`<div class="chat-message received"><p><i class="fas fa-robot"></i> ${response}</p></div>`);
-                    
-                    // Auto-scroll ke bawah
+                    try {
+                        var res = JSON.parse(response);
+                        var botReply = res.response;
+
+                        $("#chat-body").append(`<div class="chat-message received"><p><i class="fas fa-robot"></i> ${botReply}</p></div>`);
+                    } catch (err) {
+                        $("#chat-body").append(`<div class="chat-message received"><p><i class="fas fa-robot"></i> (Gagal parsing respons)</p></div>`);
+                    }
+
                     $("#chat-body").scrollTop($("#chat-body")[0].scrollHeight);
                 },
                 error: function () {
-                    alert("Gagal menghubungi chatbot.");
+                    $("#chat-body").append(`<div class="chat-message received"><p><i class="fas fa-robot"></i> (Gagal menghubungi chatbot)</p></div>`);
                 }
             });
 
-            $("#chat-input").val(""); // Kosongkan input
+            $("#chat-input").val("");
         }
     }
 
-    // Event listener untuk tombol Kirim
-    $("#send-btn").click(function () {
-        sendMessage();
-    });
-
-    // Event listener untuk tekan Enter di input chat
-    $("#chat-input").keypress(function (event) {
-        if (event.which === 13) {  // 13 = Enter
-            event.preventDefault(); // Mencegah default enter (misalnya line break)
-            sendMessage();
+    $("#send-btn").click(sendMessage);
+    $('#chat-input').keypress(function (e) {
+        if (e.which == 13) {
+            $('#send-btn').click();
+            return false;
         }
     });
 });
 </script>
 
+
 <script>
     document.getElementById("ticketOption").addEventListener("change", function() {
         let selectedOption = this.value;
-        let ticketIdForm = document.getElementById("ticket-id-form");
+        let ticketIdForm = document.getElementById("faq-form");
         let newTicketForm = document.getElementById("new-ticket-form");
 
-        // Tampilkan form sesuai dengan pilihan user
         if (selectedOption === "existing") {
             ticketIdForm.style.display = "block";
             newTicketForm.style.display = "none";

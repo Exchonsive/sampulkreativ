@@ -1,15 +1,14 @@
 <?php
 session_start();
 
-// Cek apakah user sudah login
 if (!isset($_SESSION['username'])) {
-    header("Location: login_admin.php"); // Redirect ke halaman login
+    header("Location: login_admin.php"); 
     exit();
 }
 
-// Ambil data user dari session
-$user_id = $_SESSION['user_id']; // ID User
-$username = $_SESSION['username']; // Username
+$username = $_SESSION['username']; 
+$nama_lengkap = $_SESSION['nama']; 
+$id_user_login = $_SESSION['id']; 
 ?>
 
 <!DOCTYPE html>
@@ -77,9 +76,9 @@ $username = $_SESSION['username']; // Username
                 </div>
                 <ul class="nav flex-column">
                     <li class="nav-item"><a href="index_admin.php?page=halaman_utama" class="nav-link text-white">Halaman Utama</a></li>
-                    <li class="nav-item"><a href="index_admin.php?page=report" class="nav-link text-white">Report</a></li>
-                    <li class="nav-item"><a href="index_admin.php?page=chat_agent" class="nav-link text-white">Chat Agent</a></li>
-                    <li class="nav-item"><a href="logout_admin.php" class="nav-link text-white">Log Out</a></li>
+                    <li class="nav-item"><a href="index_admin.php?page=halaman_download" class="nav-link text-white">Download Data</a></li>
+                    <li class="nav-item"><a href="index_admin.php?page=chat_agent" class="nav-link text-white">Kontak Agen</a></li>
+                    <li class="nav-item"><a href="logout_admin.php" class="nav-link text-white">Logout</a></li>
                 </ul>
             </nav>
 
