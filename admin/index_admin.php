@@ -17,19 +17,23 @@ $id_user_login = $_SESSION['id'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sampul Kreativ</title>
+    
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+
+
     <style>
-        /* SIDEBAR */
         .sidebar {
             width: 250px;
         }
 
-        /* MAIN CONTENT */
         main {
             transition: margin-left 0.3s;
         }
 
-        /* RESPONSIVE */
         @media (max-width: 768px) {
             .sidebar {
                 position: fixed;
@@ -45,22 +49,6 @@ $id_user_login = $_SESSION['id'];
                 margin-left: 0 !important;
             }
         }
-
-        /* Sidebar default di layar kecil (tersembunyi) */
-        @media (max-width: 768px) {
-            .sidebar {
-                position: fixed;
-                left: -250px;
-                transition: left 0.3s;
-            }
-
-            .sidebar.active {
-                left: 0;
-            }
-        }
-
-
-
     </style>
 </head>
 <body>
@@ -75,10 +63,26 @@ $id_user_login = $_SESSION['id'];
                     <img src="../img/sampulkreativ-logo-putih.png" alt="Logo" style="width: 150px;">
                 </div>
                 <ul class="nav flex-column">
-                    <li class="nav-item"><a href="index_admin.php?page=halaman_utama" class="nav-link text-white">Halaman Utama</a></li>
-                    <li class="nav-item"><a href="index_admin.php?page=halaman_download" class="nav-link text-white">Download Data</a></li>
-                    <li class="nav-item"><a href="index_admin.php?page=chat_agent" class="nav-link text-white">Kontak Agen</a></li>
-                    <li class="nav-item"><a href="logout_admin.php" class="nav-link text-white">Logout</a></li>
+                    <li class="nav-item">
+                        <a href="index_admin.php?page=halaman_utama" class="nav-link text-white">
+                            <i class="fas fa-home me-2"></i> Halaman Utama
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index_admin.php?page=halaman_download" class="nav-link text-white">
+                            <i class="fas fa-download me-2"></i> Download Data
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="index_admin.php?page=chat_agent" class="nav-link text-white">
+                            <i class="fas fa-headset me-2"></i> Kontak Agen
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="logout_admin.php" class="nav-link text-white">
+                            <i class="fas fa-sign-out-alt me-2"></i> Logout
+                        </a>
+                    </li>
                 </ul>
             </nav>
 
@@ -89,12 +93,11 @@ $id_user_login = $_SESSION['id'];
         </div>
     </div>
 </body>
+
 <script>
     document.getElementById("toggleSidebar").addEventListener("click", function() {
         document.querySelector(".sidebar").classList.toggle("active");
     });
 </script>
-
-
 
 </html>

@@ -53,74 +53,84 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'], $_POST['status'
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdn.datatables.net/1.13.5/css/dataTables.bootstrap5.min.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+  .d-grid .btn {
+    width: 100%;
+    margin-bottom: 4px;
+  }
+</style>
 </head>
 <body>
 <div class="container mt-5">
   <h2 class="mb-4">Daftar Kontak Agen</h2>
   <table id="kontakAgenTable" class="table table-bordered table-striped">
-    <thead class="table-dark text-center">
-        <tr>
-            <th style="width: 10%;">Tanggal</th>
-            <th style="width: 12%;">Nama</th>
-            <th style="width: 18%;">Kontak</th>
-            <th style="width: 30%;">Pertanyaan</th>
-            <th style="width: 10%;">Status</th>
-            <th style="width: 15%;">Aksi</th>
-        </tr>
-    </thead>
-    <tbody>
-      <?php
-      $result = $conn->query("SELECT * FROM kontak_agen ORDER BY created_at DESC");
-      while ($row = $result->fetch_assoc()):
-        $kontak = htmlspecialchars($row['kontak']);
-        $isEmail = strpos($kontak, '@') !== false;
-        $status = $row['status'];
-        $badge = $status === 'Pending' ? 'secondary' : ($status === 'Progress' ? 'warning' : 'success');
-        $namaUser = htmlspecialchars($row['nama']);
-        $pertanyaan = htmlspecialchars($row['pertanyaan']);
+  <thead>
+    <tr>
+      <th>Tanggal</th>
+      <th>Nama</th>
+      <th>Kontak</th>
+      <th>Pertanyaan</th>
+      <th>Status</th>
+      <th style="width: 15%;">Aksi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <?php
+    $result = $conn->query("SELECT * FROM kontak_agen ORDER BY created_at ASC");
+    while ($row = $result->fetch_assoc()):
+      $kontak = htmlspecialchars($row['kontak']);
+      $isEmail = strpos($kontak, '@') !== false;
+      $status = $row['status'];
+      $badge = $status === 'Pending' ? 'secondary' : ($status === 'Progress' ? 'warning' : 'success');
+      $namaUser = htmlspecialchars($row['nama']);
+      $pertanyaan = htmlspecialchars($row['pertanyaan']);
 
-        $templatePesan = rawurlencode("Halo kak $namaUser, aku $nama_lengkap dari tim Sampul Kreativ ingin menjawab pertanyaan kakak tentang: '$pertanyaan'.");
+      $templatePesan = rawurlencode("Halo kak $namaUser, aku $nama_lengkap dari tim Sampul Kreativ ingin menjawab pertanyaan kakak tentang: '$pertanyaan'.");
 
-        // Cek follow-up
-        $fu_nama = '-';
-        $fu_waktu = '-';
-        $id_kontak = $row['id'];
-        $sql_fu = "SELECT users.nama, fu_kontak_agen.created_at 
-                    FROM fu_kontak_agen 
-                    JOIN users ON users.id = fu_kontak_agen.id_users 
-                    WHERE fu_kontak_agen.id_kontak_agen = $id_kontak 
-                    LIMIT 1";
-        $res_fu = mysqli_query($conn, $sql_fu);
-        if ($res_fu && mysqli_num_rows($res_fu) > 0) {
-            $data_fu = mysqli_fetch_assoc($res_fu);
-            $fu_nama = $data_fu['nama'];
-            $fu_waktu = date('d M Y H:i', strtotime($data_fu['created_at']));
-        }
+      $fu_nama = '-';
+      $fu_waktu = '-';
+      $id_kontak = $row['id'];
+      $sql_fu = "SELECT users.nama, fu_kontak_agen.created_at 
+                  FROM fu_kontak_agen 
+                  JOIN users ON users.id = fu_kontak_agen.id_users 
+                  WHERE fu_kontak_agen.id_kontak_agen = $id_kontak 
+                  LIMIT 1";
+      $res_fu = mysqli_query($conn, $sql_fu);
+      if ($res_fu && mysqli_num_rows($res_fu) > 0) {
+          $data_fu = mysqli_fetch_assoc($res_fu);
+          $fu_nama = $data_fu['nama'];
+          $fu_waktu = date('d M Y H:i', strtotime($data_fu['created_at']));
+      }
 
-        $aksi = $isEmail
-          ? "<a href='mailto:$kontak?subject=Pertanyaan dari SampulKreativ&body=Halo kak $namaUser, aku $nama_lengkap dari tim Sampul Kreativ ingin menjawab pertanyaan kakak tentang: $pertanyaan.' class='btn btn-sm btn-outline-primary'><i class='fas fa-envelope'></i> Email</a>"
-          : "<a href='https://wa.me/" . preg_replace('/^0/', '62', $kontak) . "?text=$templatePesan' target='_blank' class='btn btn-sm btn-outline-success'><i class='fab fa-whatsapp'></i> WhatsApp</a>";
+      $aksi = $isEmail
+        ? "<a href='mailto:$kontak?subject=Pertanyaan dari SampulKreativ&body=Halo kak $namaUser, aku $nama_lengkap dari tim Sampul Kreativ ingin menjawab pertanyaan kakak tentang: $pertanyaan.' class='btn btn-sm btn-outline-primary'><i class='fas fa-envelope'></i> Email</a>"
+        : "<a href='https://wa.me/" . preg_replace('/^0/', '62', $kontak) . "?text=$templatePesan' target='_blank' class='btn btn-sm btn-outline-success'><i class='fab fa-whatsapp'></i> WhatsApp</a>";
 
-        $aksi .= " <button class='btn btn-sm btn-outline-dark' 
-                      data-bs-toggle='modal' 
-                      data-bs-target='#statusModal' 
-                      data-id='{$row['id']}' 
-                      data-status='{$status}' 
-                      data-fu='{$fu_nama}' 
-                      data-waktu='{$fu_waktu}'>
-                      <i class='fas fa-edit'></i> Status</button>";
-      ?>
-      <tr>
-        <td class="text-center align-middle"><?= date('d-M-Y', strtotime($row['created_at'])) ?></td>
-        <td class="align-middle"><?= $namaUser ?></td>
-        <td class="align-middle"><?= $kontak ?></td>
-        <td class="align-middle"><?= $pertanyaan ?></td>
-        <td class="text-center align-middle"><span class="badge bg-<?= $badge ?>"><?= $status ?></span></td>
-        <td class="text-center align-middle"><?= $aksi ?></td>
-      </tr>
-      <?php endwhile; ?>
-    </tbody>
-  </table>
+      $aksi .= " <button class='btn btn-sm btn-outline-dark' 
+                    data-bs-toggle='modal' 
+                    data-bs-target='#statusModal' 
+                    data-id='{$row['id']}' 
+                    data-status='{$status}' 
+                    data-fu='{$fu_nama}' 
+                    data-waktu='{$fu_waktu}'>
+                    <i class='fas fa-edit'></i> Status</button>";
+    ?>
+    <tr>
+      <td class="text-center align-middle"><?= date('d-M-Y', strtotime($row['created_at'])) ?></td>
+      <td class="align-middle"><?= $namaUser ?></td>
+      <td class="align-middle"><?= $kontak ?></td>
+      <td class="align-middle"><?= $pertanyaan ?></td>
+      <td class="text-center align-middle"><span class="badge bg-<?= $badge ?>"><?= $status ?></span></td>
+      <td class="text-center align-middle">
+        <div class="d-grid gap-1">
+          <?= $aksi ?>
+        </div>
+      </td>
+    </tr>
+    <?php endwhile; ?>
+  </tbody>
+</table>
+
 </div>
 
 <!-- Modal Update Status -->

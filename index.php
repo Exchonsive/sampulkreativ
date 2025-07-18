@@ -150,7 +150,7 @@ require 'admin/koneksi.php';
         <br><br><br>
         <div class="container text-center" >
             <h2 style="color: #20c997;">Portofolio</h2>
-            <p>Samplukreativ Technology stores our various works as reference materials and portfolios from the information technology consultants that we offer.</p>
+            <p>Samplukreativ Technology memiliki proyek yang bervariasi untuk dijadikan referensi dan portofolio.</p>
     
             <!-- Filter Buttons -->
             <div class="portfolio-filter">
@@ -263,7 +263,7 @@ require 'admin/koneksi.php';
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <a href="https://maps.app.goo.gl/YR2E7HYEDcz6TdXHA" target="_blank">Branch Work Office 1</a>
-                            <p>House of Software 1, Jl. C. Bangas III, Menteng, Kec. Jekan Raya, Kota Palangka Raya, Kalimantan Tengah 74874</p>
+                            <p>Software House 1, Jl. C. Bangas III, Menteng, Kec. Jekan Raya, Kota Palangka Raya, Kalimantan Tengah 74874</p>
                         </div>
                     </div>
 
@@ -271,7 +271,7 @@ require 'admin/koneksi.php';
                         <i class="fas fa-map-marker-alt"></i>
                         <div>
                             <a href="https://maps.app.goo.gl/bG5VpmfV1jHzB9id8" target="_blank">Branch Work Office 2</a>
-                            <p>House of Software 2, Kingshouse Residence 2, Jl. Gelora, Babelan Kota, Kec. Babelan, Kabupaten Bekasi 17610</p>
+                            <p>Software House 2, Kingshouse Residence 2, Jl. Gelora, Babelan Kota, Kec. Babelan, Kabupaten Bekasi 17610</p>
                         </div>
                     </div>
     
