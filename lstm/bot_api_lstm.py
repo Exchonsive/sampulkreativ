@@ -4,11 +4,10 @@ import pickle
 import json
 import numpy as np
 import string
-from Sastrawi.Stemmer.StemmerFactory import StemmerFactory
 from nltk.tokenize import word_tokenize
 
-
 app = Flask(__name__)
+
 model = tf.keras.models.load_model("chatbot_model.h5")
 with open("tokenizer.pkl", "rb") as f:
     tokenizer = pickle.load(f)
@@ -18,8 +17,6 @@ with open("intents-real.json", encoding='utf-8') as file:
     data = json.load(file)
 with open("combined_slang_words.txt", encoding='utf-8') as f:
     slang_dict = json.load(f)
-
-stemmer = StemmerFactory().create_stemmer()
 
 max_len = model.input_shape[1]
 

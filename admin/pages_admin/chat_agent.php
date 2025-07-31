@@ -1,6 +1,5 @@
 <?php
 require 'koneksi.php';
-header('Content-Type: text/html; charset=utf-8');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'], $_POST['status'])) {
     $id = intval($_POST['id']);
@@ -39,10 +38,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'], $_POST['status'
         mysqli_stmt_close($check_stmt);
     }
 
-    header("Location:index_admin.php?page=chat_agent");
+    header("Location: index_admin.php?page=chat_agent&update=success");
     exit();
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="id">
@@ -103,7 +103,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'], $_POST['status'
       }
 
       $aksi = $isEmail
-        ? "<a href='mailto:$kontak?subject=Pertanyaan dari SampulKreativ&body=Halo kak $namaUser, aku $nama_lengkap dari tim Sampul Kreativ ingin menjawab pertanyaan kakak tentang: $pertanyaan.' class='btn btn-sm btn-outline-primary'><i class='fas fa-envelope'></i> Email</a>"
+        ? "<a href='mailto:$kontak?subject=Response dari SampulKreativ&body=Halo kak $namaUser, aku $nama_lengkap dari tim Sampul Kreativ ingin menjawab pertanyaan kakak tentang: $pertanyaan.' class='btn btn-sm btn-outline-primary'><i class='fas fa-envelope'></i> Email</a>"
         : "<a href='https://wa.me/" . preg_replace('/^0/', '62', $kontak) . "?text=$templatePesan' target='_blank' class='btn btn-sm btn-outline-success'><i class='fab fa-whatsapp'></i> WhatsApp</a>";
 
       $aksi .= " <button class='btn btn-sm btn-outline-dark' 
@@ -156,7 +156,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'], $_POST['status'
           </select>
         </div>
         <div class="modal-footer">
-          <button type="submit" class="btn btn-primary">Simpan</button>
+          <button type="submit" class="btn btn-primary"><i class='fas fa-save'></i> Simpan</button>
         </div>
       </form>
     </div>
@@ -166,6 +166,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['id'], $_POST['status'
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.5/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.5/js/dataTables.bootstrap5.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  <?php if (isset($_GET['update']) && $_GET['update'] === 'success'): ?>
+    Swal.fire({
+      icon: 'success',
+      title: 'Berhasil!',
+      text: 'Status berhasil diperbarui.',
+      timer: 2000,
+      showConfirmButton: false
+    }).then(() => {
+      const url = new URL(window.location.href);
+      url.searchParams.delete('update');
+      window.location.href = url.toString();
+    });
+  <?php endif; ?>
+</script>
+
 <script>
   $(document).ready(function() {
     $('#kontakAgenTable').DataTable();
