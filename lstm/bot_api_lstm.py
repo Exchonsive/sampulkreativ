@@ -13,7 +13,7 @@ with open("tokenizer.pkl", "rb") as f:
     tokenizer = pickle.load(f)
 with open("label_encoder.pkl", "rb") as f:
     le = pickle.load(f)
-with open("intents-real.json", encoding='utf-8') as file:
+with open("intents-fix.json", encoding='utf-8') as file:
     data = json.load(file)
 with open("combined_slang_words.txt", encoding='utf-8') as f:
     slang_dict = json.load(f)

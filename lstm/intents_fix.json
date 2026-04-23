@@ -1,0 +1,606 @@
+{
+  "intents": [
+    {
+      "tag": "salam",
+      "patterns": [
+        "Halo",
+        "Hey",
+        "Hai",
+        "Hi",
+        "Hay",
+        "Selamat datang",
+        "Halo, apa kabar?",
+        "Hai, bagaimana kabarmu?",
+        "Permisi",
+        "Apa kabar",
+        "Halo Bro",
+        "Halo Sis",
+        "Hai kak",
+        "Hai admin",
+        "Halo admin",
+        "Yo",
+        "Howdy",
+        "Misi numpang tanya",
+        "Halo bos",
+        "Hai mbak",
+        "Hai mas",
+        "Hai tim support",
+        "Hi team",
+        "Permisi admin",
+        "Permisi tim support"
+      ],
+      "responses": [
+        "Halo kak! Selamat datang di Sampul Kreatif. Ada yang bisa kami bantu?",
+        "Hai kak! Terima kasih telah menghubungi Sampul Kreatif. Ada pertanyaan atau kebutuhan terkait layanan kami?",
+        "Hi kak! Apa yang bisa kami bantu hari ini?",
+        "Hay kak! Kami di sini untuk membantu Anda. Ada layanan IT yang ingin Anda diskusikan?",
+        "Halo! Tim Sampul Kreatif siap membantu kebutuhanmu!",
+        "Selamat datang! Jangan sungkan untuk bertanya ya kak.",
+        "Hai juga! Kamu butuh bantuan tentang apa?",
+        "Halo kak! Apakah ada yang bisa aku bantu?",
+        "Salam kenal kak! Senang bisa membantu kamu di sini",
+        "Hi! Yuk kita mulai, kamu lagi cari solusi untuk apa nih?"
+      ]
+    },
+    {
+      "tag": "salam-pagi",
+      "patterns": [
+        "Halo selamat pagi",
+        "Selamat pagi",
+        "Pagi kak",
+        "Pagi bro",
+        "Pagi mbak",
+        "Pagi mas",
+        "Pagi"
+      ],
+      "responses": [
+        "Halo selamat pagi kak! Ada yang bisa kami bantu?",
+        "Halo, selamat pagi! Apakah ada pertanyaan atau kebutuhan terkait layanan kami?"
+      ]
+    },
+    {
+      "tag": "salam-siang",
+      "patterns": [
+        "Selamat siang",
+        "Halo selamat siang",
+        "Siang kak",
+        "Siang bro",
+        "Siang mbak",
+        "Siang mas",
+        "Selamat siang admin",
+        "Hai, Selamat siang",
+        "Selamat siang tim",
+        "Siang team",
+        "Selamat siang kakak"
+      ],
+      "responses": [
+        "Halo selamat siang kak! Ada yang bisa kami bantu?",
+        "Halo, selamat siang! Apakah ada pertanyaan atau kebutuhan terkait layanan kami?",
+        "Selamat siang kak! Ada yang bisa kami bantu siang ini?",
+        "Siang kak! Terima kasih sudah menghubungi kami, ada yang bisa kami bantu?",
+        "Halo, siang! Mau konsultasi layanan apa nih?",
+        "Selamat siang! Semoga aktivitasmu lancar, ada yang bisa kami bantu?"
+      ]
+    },
+    {
+      "tag": "salam-sore",
+      "patterns": [
+        "Halo selamat sore",
+        "Selamat sore",
+        "Sore kak",
+        "Sore bro",
+        "Sore mbak",
+        "Sore mas",
+        "Selamat sore admin",
+        "Hai, Selamat sore",
+        "Selamat sore tim",
+        "Sore team",
+        "Sore"
+      ],
+      "responses": [
+        "Halo selamat sore kak! Ada yang bisa kami bantu?",
+        "Halo, selamat sore! Apakah ada pertanyaan atau kebutuhan terkait layanan kami?"
+      ]
+    },
+    {
+      "tag": "salam-malam",
+      "patterns": [
+        "Halo selamat malam",
+        "Selamat malam",
+        "Malam kak",
+        "Malam bro",
+        "Malam mbak",
+        "Malam mas",
+        "Selamat malam admin",
+        "Hai, Selamat malam",
+        "Selamat malam tim",
+        "Malam team",
+        "Malam"
+      ],
+      "responses": [
+        "Halo selamat malam kak! Ada yang bisa kami bantu?",
+        "Halo, selamat malam! Apakah ada pertanyaan atau kebutuhan terkait layanan kami?"
+      ]
+    },
+    {
+      "tag": "salam-tinggal",
+      "patterns": [
+        "Dadah",
+        "Selamat tinggal",
+        "Sampai jumpa",
+        "babay",
+        "Sampai nanti",
+        "See you!",
+        "Baik, saya lanjutkan nanti"
+      ],
+      "responses": [
+        "Sampai jumpa lagi kak, terima kasih!",
+        "Semoga harimu menyenangkan, terima kasih!",
+        "Dadah! Jangan lupa kembali lagi ya, terima kasih!",
+        "Terima kasih telah menghubungi kami. Sampai jumpa kembali!",
+        "Sampai jumpa, semoga harimu menyenangkan!, terima kasih!",
+        "Baik, kami akhiri sesi ini ya. Terima kasih telah menggunakan layanan kami!",
+        "Terima kasih, sukses selalu untuk aktivitas Anda!"
+      ]
+    },
+    {
+      "tag": "terimakasih",
+      "patterns": [
+        "Terima kasih",
+        "Makasih",
+        "Thanks",
+        "Thank you",
+        "Terima kasih banyak",
+        "Makasih banget",
+        "Thanks a lot",
+        "Tengkyu",
+        "Terima kasih atas bantuannya",
+        "Terima kasih, sampai jumpa",
+        "Terima kasih, saya akan kembali lagi"
+      ],
+      "responses": [
+        "Sama-sama! Jangan ragu untuk menghubungi kami jika ada kebutuhan lain!",
+        "Terima kasih kembali. Jangan ragu untuk menghubungi kami jika ada kebutuhan lain!",
+        "Senang bisa membantu! Jangan ragu untuk menghubungi kami jika ada kebutuhan lain!",
+        "Baik, terima kasih kembali! Jangan ragu untuk menghubungi kami jika ada kebutuhan lain!"
+      ]
+    },
+    {
+      "tag": "tentang",
+      "patterns": [
+        "Siapa kamu?",
+        "Kamu siapa?",
+        "Apa kamu?",
+        "Siapa namamu?",
+        "Aku harus memanggilmu apa?",
+        "Namamu siapa?",
+        "Kamu siapa sih?"
+      ],
+      "responses": [
+        "Saya SampulAssistant, asisten virtual dari Sampul Kreatif yang siap membantu kebutuhan Anda. Apakah ada yang bisa saya bantu?",
+        "Saya SampulAssistant, asisten Anda untuk pertanyaan seputar layanan IT dari Sampul Kreatif. Apa yang bisa saya bantu hari ini?",
+        "Anda bisa memanggil saya SampulAssistant.",
+        "Nama saya SampulAssistant!",
+        "Panggil saja saya SampulAssistant."
+      ]
+    },
+    {
+      "tag": "layanan",
+      "patterns": [
+        "Apa yang bisa kamu lakukan?",
+        "Layanan apa saja yang kamu tawarkan?",
+        "Apa saja layananmu?",
+        "Kamu bisa bantu apa?",
+        "Jelaskan layananmu",
+        "Bisakah kamu memberitahu tentang layananmu?"
+      ],
+      "responses": [
+        "Kami menawarkan layanan IT seperti pengembangan aplikasi web dan mobile, konsultasi IT, desain grafis, dan multimedia. Jika ada kebutuhan lain, jangan ragu untuk menghubungi saya!",
+        "Sampul Kreatif menyediakan jasa pembuatan aplikasi web, mobile, konsultasi IT, multimedia, dan desain grafis. Bagaimana kak?, adakah yang bisa kami bisa membantu Anda?"
+      ]
+    },
+    {
+      "tag": "nama",
+      "patterns": [
+        "Nama saya [nama]",
+        "Nama aku [nama]",
+        "Kamu bisa memanggilku [nama]",
+        "Kamu bisa memanggil saya [nama]",
+        "Panggil aku [nama]",
+        "Panggil saya [nama]"
+      ],
+      "responses": [
+        "Halo kak [nama]. Katakan apa yang bisa saya bantu, kak [nama]?",
+        "Senang bisa mengenalmu, kak [nama]. Jadi apa yang bisa saya bantu hari ini?",
+        "Nama mu sangat bagus kak [nama]! Apakah ada yang bisa saya bantu?",
+        "Halo kak [nama]. Apakah ada layanan yang ingin kakak tanyakan?"
+      ]
+    },
+    {
+      "tag": "pengembangan-web",
+      "patterns": [
+        "Saya ingin membuat aplikasi web",
+        "Apakah Anda menawarkan jasa pembuatan aplikasi web?",
+        "Bisakah Anda membantu saya membuat website?",
+        "Jasa pembuatan website",
+        "Saya butuh website untuk bisnis saya",
+        "Bagaimana cara membuat situs web?",
+        "Saya perlu layanan pengembangan web",
+        "Saya butuh aplikasi berbasis web",
+        "Apakah bisa buat website custom?",
+        "Saya ingin mengembangkan sistem web",
+        "Mau bikin website toko online",
+        "Bisa bantu buat landing page?",
+        "Saya ingin website untuk portofolio saya",
+        "Bisa buat aplikasi web untuk internal perusahaan?",
+        "Punya layanan web development?",
+        "Layanan buat bikin website ada?",
+        "Saya tertarik bikin website perusahaan",
+        "Butuh website untuk promosi produk",
+        "Bisa bantu bikin sistem web dan backend-nya?",
+        "Bisa buat sistem informasi berbasis web?",
+        "Saya perlu web apps untuk keperluan bisnis",
+        "Bagaimana cara kerja layanan web development Anda?",
+        "Apa saja layanan pembuatan website yang tersedia?",
+        "Apakah layanan web developmentnya full sampai ke setting server?",
+        "Apakah domain sudah termasuk dalam layanan pembuatan website?"
+      ],
+      "responses": [
+        "Tentu, kami menawarkan jasa pembuatan aplikasi web dari yang biasa hingga profesional. Silakan ceritakan detail kebutuhan anda kepada agen kami dengan klik Kontak Agent.",
+        "Kami dapat membantu Anda dalam pembuatan website. Silakan ceritakan detail kebutuhan anda kepada agen kami dengan klik Kontak Agent.",
+        "Ya, kami menyediakan layanan pengembangan web. Silakan beritahu agen kami spesifikasi yang Anda inginkan dengan klik Kontak Agent.",
+        "Kami siap membantu Anda membangun website yang sesuai dengan kebutuhan bisnis Anda. Klik Kontak Agent untuk konsultasi lebih lanjut.",
+        "Ingin website custom? Kami siap bantu dari desain hingga implementasi. Silakan hubungi agen kami melalui Kontak Agent.",
+        "Kami memiliki tim developer yang berpengalaman dalam pembuatan aplikasi web, baik untuk keperluan bisnis, website pribadi, internal perusahaan, maupun e-commerce.",
+        "Kami menyediakan layanan pengembangan website dengan teknologi terkini dan desain yang responsif. Yuk, sampaikan kebutuhanmu melalui Kontak Agent.",
+        "Apapun kebutuhan web Anda dari toko online, sistem informasi, hingga dashboard internal kami siap bantu! Klik Kontak Agent untuk memulai.",
+        "Silakan hubungi tim kami melalui Kontak Agent. Kami akan bantu dari perencanaan, pengembangan, hingga launching website Anda."
+      ]
+    },
+    {
+      "tag": "pengembangan-mobile",
+      "patterns": [
+        "Apakah Anda menawarkan jasa pembuatan aplikasi mobile?",
+        "Saya ingin membuat aplikasi mobile",
+        "Jasa pembuatan aplikasi mobile",
+        "Butuh bantuan untuk membuat aplikasi smartphone",
+        "Bagaimana cara membuat aplikasi mobile?",
+        "Saya ingin aplikasi untuk ponsel",
+        "Saya butuh aplikasi Android dan iOS",
+        "Ingin buat aplikasi multiplatform",
+        "Bisa bantu buat aplikasi hybrid?",
+        "Perlu aplikasi untuk pengguna mobile",
+        "Saya tertarik bikin aplikasi mobile",
+        "Punya layanan bikin app Android & iOS?",
+        "Bisa buat aplikasi untuk bisnis saya?",
+        "Butuh app mobile untuk internal perusahaan",
+        "Ingin bikin aplikasi mobile yang terintegrasi dengan website",
+        "Apakah bisa membuat aplikasi untuk hp android atau iphone?",
+        "Apakah disini bisa membuat apikasi yang bisa berjalan di hp?"
+      ],
+      "responses": [
+        "Ya, kami menyediakan layanan pembuatan aplikasi mobile untuk platform Android dan iOS",
+        "Kami dapat membantu Anda dalam pengembangan aplikasi mobile. Silakan ceritakan kebutuhan anda kepada agen kami dengan klik Kontak Agent.",
+        "Tentu, kami memiliki tim yang berpengalaman dalam pembuatan aplikasi mobile. anda bisa klik Kontak Agent untuk pertanyaan detail dan lebih lanjut",
+        "Kami siap bantu pengembangan aplikasi mobile, baik native maupun hybrid, sesuai kebutuhan Anda.",
+        "Silakan hubungi tim kami melalui Kontak Agent untuk konsultasi terkait fitur, platform, dan estimasi pengembangan aplikasi Anda."
+      ]
+    },
+    {
+      "tag": "pengembangan-ios",
+      "patterns": [
+        "Bisakah Anda membuat aplikasi iOS?",
+        "Saya ingin membuat aplikasi untuk iPhone",
+        "Apakah Anda menawarkan jasa pembuatan aplikasi iOS?",
+        "Jasa pembuatan aplikasi iOS",
+        "Butuh aplikasi untuk iOS",
+        "Pengembangan aplikasi iOS",
+        "Bisa bikin aplikasi iPhone?",
+        "Saya mau buat aplikasi khusus iOS",
+        "Ingin app untuk App Store",
+        "Aplikasi iOS untuk user saya",
+        "Perlu app iOS untuk bisnis",
+        "Bisa bantu submit ke App Store juga?",
+        "Apakah bisa membuat aplikasi untuk hp iphone?"
+      ],
+      "responses": [
+        "Ya, kami menyediakan layanan pengembangan aplikasi iOS. Silakan ceritakan detail kebutuhan anda kepada agen kami dengan klik Kontak Agent.",
+        "Kami dapat membantu Anda membuat aplikasi untuk perangkat iOS. Silakan ceritakan detail kebutuhan anda kepada agen kami dengan klik Kontak Agent.",
+        "Tentu, kami memiliki tim yang berpengalaman dalam pembuatan aplikasi iOS. Silakan ceritakan detail kebutuhan anda kepada agen kami dengan klik Kontak Agent.",
+        "Kami siap bantu pembuatan aplikasi iOS dari tahap desain hingga upload ke App Store!, Silahkan klik Kontak Agent untuk menjelaskan detail aplikasi anda."
+      ]
+    },
+    {
+      "tag": "pengembangan-android",
+      "patterns": [
+        "Bisakah Anda membuat aplikasi Android?",
+        "Saya ingin membuat aplikasi untuk Android",
+        "Apakah Anda menawarkan jasa pembuatan aplikasi Android?",
+        "Jasa pembuatan aplikasi Android",
+        "Butuh aplikasi untuk Android",
+        "Pengembangan aplikasi Android",
+        "Saya mau bikin aplikasi Android",
+        "Bisa bantu buat aplikasi Android custom?",
+        "Saya butuh app Android untuk usaha saya",
+        "Aplikasi Android untuk bisnis saya",
+        "Punya layanan buat Android apps?",
+        "Ingin publish aplikasi ke Play Store"
+      ],
+      "responses": [
+        "Ya, kami menyediakan layanan pengembangan aplikasi Android.",
+        "Kami dapat membantu Anda membuat aplikasi untuk perangkat Android, Kami juga bisa bantu proses upload ke Play Store jika dibutuhkan.",
+        "Silakan klik Kontak Agent untuk berkonsultasi tentang fitur dan kebutuhan aplikasi Android Anda."
+      ]
+    },
+    {
+      "tag": "konsultasi-it",
+      "patterns": [
+        "Saya butuh konsultasi IT",
+        "Apakah Anda menyediakan layanan konsultasi IT?",
+        "Butuh bantuan untuk masalah IT",
+        "Bisakah saya konsultasi tentang sistem IT?",
+        "Saya mencari konsultan IT",
+        "Layanan konsultasi IT",
+        "Butuh saran mengenai IT",
+        "Butuh konsultasi mengenai virus pada komputer",
+        "Saya perlu konsultasi mengenai keamanan aplikasi",
+        "Apakah saya bisa konsultasi mengenai keamanan server?",
+        "Saya butuh arahan soal sistem informasi",
+        "Bisakah saya berdiskusi tentang IT infrastructure",
+        "Bisa bantu cek sistem yang error?",
+        "Konsultasi tentang keamanan data bisa?",
+        "Perlu pendapat profesional soal arsitektur IT"
+      ],
+      "responses": [
+        "Tentu, kami menyediakan layanan konsultasi IT. Silahkan diskusikan seputar IT kepada agen kami dengan klik Kontak Agent",
+        "Kami siap membantu Anda dengan konsultasi IT. Silakan jelaskan masalah atau kebutuhan Anda kepada agen kami dengan klik Kontak Agent.",
+        "Ya, kami menawarkan jasa konsultasi IT untuk berbagai kebutuhan bisnis Anda.",
+        "Kami menyediakan layanan konsultasi untuk membantu Anda menemukan solusi terbaik dalam pengelolaan dan pengembangan sistem IT.",
+        "Silakan hubungi tim kami via Kontak Agent untuk konsultasi terkait jaringan, server, keamanan, atau masalah teknis lainnya.",
+        "Kami bisa membantu Anda dalam menyelesaikan permasalahan di bidang IT. Klik Kontak Agent untuk mulai konsultasi."
+      ]
+    },
+    {
+      "tag": "layanan-multimedia",
+      "patterns": [
+        "Apakah Anda menyediakan layanan multimedia?",
+        "Saya butuh jasa multimedia",
+        "Bisakah Anda membantu dengan proyek multimedia saya?",
+        "Jasa multimedia apa saja yang Anda tawarkan?",
+        "Saya mencari layanan multimedia",
+        "Layanan multimedia",
+        "Butuh bantuan dengan konten multimedia",
+        "Perlu editing video",
+        "Saya butuh animasi untuk presentasi",
+        "Punya layanan motion graphic?",
+        "Perlu konten visual buat media sosial",
+        "Bisa buat video untuk company profile?",
+        "Butuh konten video untuk kampanye",
+        "Saya ingin membuat animasi produk",
+        "Ada jasa editing video promosi?"
+      ],
+      "responses": [
+        "Silakan hubungi kami melalui Kontak Agent untuk layanan multimedia seperti visual campaign, video profile, dan animasi presentasi.",
+        "Kami siap mendukung kebutuhan multimedia Anda dengan tim kreatif yang profesional.",
+        "Kami dapat membantu Anda dengan proyek multimedia Anda. Silakan beritahu kami lebih detail melalui Kontak Agent.",
+        "Tentu, kami menawarkan layanan multimedia seperti video editing, animasi, dan lainnya."
+      ]
+    },
+    {
+      "tag": "desain-grafis",
+      "patterns": [
+        "Saya mencari jasa desain grafis",
+        "Apakah Anda menawarkan layanan desain grafis?",
+        "Butuh bantuan desain logo",
+        "Bisakah Anda membuat desain untuk saya?",
+        "Jasa desain grafis",
+        "Layanan desain grafis",
+        "Perlu desain untuk branding",
+        "Saya ingin buat desain kemasan produk",
+        "Perlu banner untuk media sosial",
+        "Bisa bantu desain brosur?",
+        "Mau buat desain visual untuk promosi",
+        "Perlu desain poster acara"
+      ],
+      "responses": [
+        "Ya, kami menyediakan layanan desain grafis profesional. Silakan beritahu kami lebih detail melalui Kontak Agent.",
+        "Kami dapat membantu Anda dengan desain grafis seperti logo, brosur, dan lainnya. Silakan jelaskan kebutuhan Anda kepada Kontak Agent.",
+        "Tentu, kami memiliki tim desainer grafis yang siap membantu proyek Anda.",
+        "Silakan konsultasikan kebutuhan desain Anda, dari logo hingga materi promosi digital, melalui Kontak Agent.",
+        "Kami siap bantu bikin desain kreatif dan profesional yang sesuai dengan identitas brand Anda. Kontak Agent kami siap dengerin!"
+      ]
+    },
+    {
+      "tag": "harga",
+      "patterns": [
+        "Harga minimal berapa ya?",
+        "Kalau proyek kecil, kira-kira biayanya berapa?",
+        "Berapa kisaran harga untuk project sederhana?",
+        "Budget saya terbatas, bisa dibantu?",
+        "Mulai dari berapa harganya?",
+        "Berapa tarif dasar jasa Anda?",
+        "Apa ada harga paket?",
+        "Apakah ada estimasi harga awal?"
+      ],
+      "responses": [
+        "Harga layanan kami relatif, tergantung kompleksitas dan durasi pengerjaan. Rata-rata mulai dari 100 ribu rupiah ya kak Silakan konsultasikan detailnya ke agen kami lewat Kontak Agent.",
+        "Tergantung kebutuhan proyeknya kak. Kami menghitung harga berdasarkan estimasi waktu pengerjaan dan kompleksitas proyek. Silakan klik Kontak Agent untuk dapat estimasi awal.",
+        "Tenang, kami bisa menyesuaikan solusi sesuai budget kamu! Silakan ceritain dulu kebutuhannya lewat Kontak Agent ya.",
+        "Harga layanan kami mulai dari 100 ribuan, tapi untuk estimasi akurat, yuk ngobrol dulu sama agen kami lewat Kontak Agent. Kita bantu hitungin biar sesuai kebutuhan kamu!",
+        "Kami paham setiap orang punya budget berbeda, jadi fleksibel banget kok. Klik Kontak Agent dan kita bantu cari solusi terbaik untuk kamu."
+      ]
+    },
+    {
+      "tag": "harga-web",
+      "patterns": [
+        "Berapa harga pembuatan website?",
+        "Harga jasa bikin web berapa?",
+        "Kalau buat website, biayanya berapa ya?",
+        "Saya mau buat website, estimasi biayanya berapa?",
+        "Web sederhana kira-kira berapa ya?",
+        "Harga website profesional mulai dari berapa?"
+      ],
+      "responses": [
+        "Harga pembuatan website mulai dari Rp. 100.000 tergantung tingkat kompleksitas dan fitur yang dibutuhkan. Klik Kontak Agent untuk penjelasan lebih lengkap",
+        "Untuk pembuatan website, harga kami fleksibel tergantung jenis website dan deadline-nya. Silakan ceritakan kebutuhan kamu via Kontak Agent.",
+        "Kami bisa bantu dari website sederhana hingga kompleks. Yuk konsultasi dulu lewat Kontak Agent biar kami hitung estimasinya!"
+      ]
+    },
+    {
+      "tag": "harga-mobile",
+      "patterns": [
+        "Berapa harga pembuatan aplikasi mobile?",
+        "Harga bikin aplikasi untuk smartphone berapa?",
+        "Saya mau buat aplikasi mobile, kisarannya berapa?",
+        "Butuh estimasi biaya buat aplikasi ponsel",
+        "Bikin mobile app biayanya berapa?",
+        "Harga jasa mobile app mulai dari berapa?"
+      ],
+      "responses": [
+        "Harga pembuatan aplikasi mobile sangat tergantung pada fitur dan platformnya, tapi biasanya mulai dari Rp500.000. Untuk info detail, klik Kontak Agent ya!",
+        "Kami hitung harga berdasarkan kompleksitas aplikasi dan estimasi waktu pengerjaan. Klik Kontak Agent untuk konsultasi gratis dulu",
+        "Setiap aplikasi punya kebutuhan unik. Yuk cerita dulu detailnya ke agen kami lewat Kontak Agent, biar kami bantu hitungin harganya!"
+      ]
+    },
+    {
+      "tag": "harga-ios",
+      "patterns": [
+        "Berapa harga bikin aplikasi iOS?",
+        "Saya mau bikin aplikasi untuk iPhone, berapa harganya?",
+        "Aplikasi iOS harganya berapa ya kira-kira?",
+        "Bikin app iOS biayanya berapa?",
+        "Berapa estimasi harga untuk aplikasi iOS?",
+        "Harga jasa bikin iOS app mulai dari berapa?"
+      ],
+      "responses": [
+        "Harga pembuatan aplikasi iOS mulai dari Rp1.000.000, tergantung tingkat kerumitan dan fitur yang dibutuhkan. Klik Kontak Agent untuk rincian lebih lanjut.",
+        "Platform iOS punya standar khusus, jadi harga bisa berbeda dari Android. Yuk konsultasi dulu via Kontak Agent biar jelas estimasinya.",
+        "Kami siap bantu bikin app iOS dari nol, dan harga kami fleksibel sesuai kebutuhan kamu. Klik Kontak Agent untuk info selengkapnya."
+      ]
+    },
+    {
+      "tag": "harga-android",
+      "patterns": [
+        "Berapa harga bikin aplikasi Android?",
+        "Saya mau buat app Android, kisaran biayanya berapa?",
+        "Jasa bikin Android app mulai dari berapa?",
+        "Harga aplikasi Android itu berapa ya?",
+        "Butuh app Android, berapa kira-kira biayanya?",
+        "Bikin aplikasi Android mahal nggak?"
+      ],
+      "responses": [
+        "Harga pembuatan aplikasi Android mulai dari Rp500.000, tergantung pada fitur dan kompleksitasnya. Klik Kontak Agent untuk konsultasi ya!",
+        "Kami bisa bantu bikin app Android custom sesuai kebutuhan kamu. Yuk cerita detailnya ke agen kami lewat Kontak Agent.",
+        "Estimasi harga ditentukan dari deadline dan fitur-fitur yang kamu perlukan. Klik Kontak Agent untuk diskusi lebih lanjut!"
+      ]
+    },
+    {
+      "tag": "project-pelanggan",
+      "patterns": [
+        "Halo, saya ingin tanya soal progres project saya",
+        "Project saya udah sampai mana ya?",
+        "Saya mau cek status pengerjaan proyek saya",
+        "Bagaimana update terakhir proyek saya?",
+        "Bisa kasih info progress project saya?",
+        "Saya sudah order sebelumnya, ingin tanya perkembangan proyek",
+        "Project saya udah jadi belum?",
+        "Saya mau follow up pesanan saya",
+        "Boleh minta update pengerjaan?"
+      ],
+      "responses": [
+        "Terima kasih sudah menghubungi kami kembali! Untuk update proyek kamu, silakan klik Kontak Agent agar kami bisa bantu cek berdasarkan data sebelumnya ya.",
+        "Hai kak! Untuk info terbaru soal proyek kamu, tim kami siap bantu. Yuk langsung klik Kontak Agent untuk pengecekan lebih lanjut.",
+        "Halo! Kami senang kamu kembali menghubungi kami. Silakan berikan nama proyek atau detail lainnya ke Kontak Agent, biar kami bantu cek progresnya ya!"
+      ]
+    },
+    {
+      "tag": "kontak",
+      "patterns": [
+        "Bagaimana cara menghubungi Anda?",
+        "Di mana alamat kantor Anda?",
+        "Bisakah saya mendapatkan kontak Anda?",
+        "Bagaimana cara memulai proyek?",
+        "Saya ingin bertemu untuk diskusi lebih lanjut",
+        "Kontak Anda apa?",
+        "Cara menghubungi Anda?",
+        "boleh aku minta kontak yang bisa dihubungi?",
+        "siapa yang bisa aku hubungi?",
+        "apakah ada nomor yang bisa ku hubungi?",
+        "apakah ada email yang bisa ku hubungi?",
+        "dimana aku bisa mendapatkan kontak yang bisa dihubungi?"
+      ],
+      "responses": [
+        "Anda dapat menghubungi kami melalui kontak agen, email sampulkreativ@gmail.com, atau WhatsApp di 0851-7505-2477.",
+        "Kantor kami berlokasi di Gedung BITC, Jl. HMS Mintareja Sarjana Hukum Lantai 3, Baros, Cimahi, Jawa Barat. sampulkreativ@gmail.com 0851-7505-2477"
+      ]
+    },
+    {
+      "tag": "jam-operasional",
+      "patterns": [
+        "Kapan jam operasional Anda?",
+        "Jam buka kantor?",
+        "Kapan saya bisa menghubungi Anda?",
+        "Apakah Anda buka di hari Sabtu?",
+        "Apakah Anda buka 24 jam?",
+        "Jam kerja Anda?",
+        "Waktu operasional?"
+      ],
+      "responses": [
+        "Kami beroperasi dari Senin hingga Jumat, pukul 09:00 hingga 17:00 WIB.",
+        "Jam operasional kami adalah Senin-Jumat, 09:00-17:00. Kami tutup pada akhir pekan.",
+        "Anda dapat menghubungi kami selama jam kerja, Senin hingga Jumat, pukul 09:00 hingga 17:00."
+      ]
+    },
+    {
+      "tag": "tak-dipahami",
+      "patterns": [
+        "xyz",
+        "asdf",
+        "qwerty",
+        "Tidak ada",
+        "Tidak tahu",
+        "Tidak yakin",
+        "Hmmm",
+        "Tidak relevan"
+      ],
+      "responses": [
+        "Maaf, saya tidak memahami pertanyaan Anda. Anda bisa klik kontak agen untuk pertanyaan lebih detail",
+        "Mohon maaf, dapatkah Anda menjelaskan lebih lanjut?",
+        "Maaf, saya belum bisa membantu dengan pertanyaan tersebut. silahkan klik Kontak Agent untuk bantuan agen kami"
+      ]
+    },
+    {
+      "tag": "kebutuhan-project",
+      "patterns": [
+        "Berapa lama pengerjaan proyek web biasanya?",
+        "Berapa waktu yang dibutuhkan untuk menyelesaikan aplikasi?",
+        "Timeline pengerjaan proyek seperti apa?",
+        "Kapan proyek selesai?",
+        "Estimasi durasi pengerjaan proyek berapa lama?",
+        "Waktu pengerjaan biasanya berapa lama?"
+      ],
+      "responses": [
+        "Waktu pengerjaan tergantung pada kompleksitas proyek. Untuk proyek sederhana biasanya membutuhkan 1 minggu - 2 bulan. Silahkan klik kontak agen untuk pertanyaan lebih lanjut",
+        "Kami akan memberikan estimasi timeline setelah mendiskusikan detail proyek dengan Anda dengan agen kami, silahkan klik Kontak Agent.",
+        "Durasi proyek bervariasi. Mohon berikan spesifikasi kepada agen kami dengan klik Kontak Agent agar kami dapat memberikan estimasi yang akurat."
+      ]
+    },
+    {
+      "tag": "pemeliharaan",
+      "patterns": [
+        "Apakah Anda menyediakan layanan pemeliharaan?",
+        "Bagaimana cara mendapatkan dukungan teknis?",
+        "Layanan maintenance tersedia atau tidak?",
+        "Saya butuh support setelah proyek selesai",
+        "Apakah ada support pasca pengerjaan?",
+        "Bisa minta bantuan teknis kalau ada masalah?",
+        "Kalau ada bug, siapa yang bantuin?"
+      ],
+      "responses": [
+        "Kami menyediakan layanan pemeliharaan dan dukungan teknis untuk proyek yang kami kerjakan. Klik Kontak Agent untuk info lengkapnya ya!",
+        "Tentu! Tim kami siap membantu maintenance dan troubleshooting. Bisa hubungi kami lewat Kontak Agent, email ke sampulkreativ@gmail.com, atau WhatsApp di 0851-7505-2477.",
+        "Kami punya layanan after-service untuk bantu kamu setelah proyek selesai. Yuk konsultasi langsung lewat Kontak Agent!"
+      ]
+    }
+  ]
+}
